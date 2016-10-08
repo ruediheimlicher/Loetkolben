@@ -1,0 +1,21 @@
+TWI_Slave WoZi 60 40
+
+20.10.10:	Taktfrequenz 4 MHz
+
+
+e = w - x;                       //Vergleich
+esum = esum + e;                 //Integration I-Anteil
+if (esum < -400) {esum = -400;}  //Begrenzung I-Anteil
+if (esum > 400) {esum = 400;}
+y = Kp*e + Ki*Ta*esum;           //Reglergleichung
+if (y < 0) {y = 0;}              //Begrenzung Stellgröße
+if (y > 255) {y = 255;}
+PWM = y;                         //Übergabe Stellgröße
+
+
+
+
+
+
+￼
+￼
